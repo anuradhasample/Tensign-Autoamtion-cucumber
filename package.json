@@ -19,7 +19,6 @@
     }
   },
   "scripts": {
-    "build": "next build",
     "beforetest": "npm run allure:clear",
     "allure:clear": "if exist allure-results rmdir /q /s allure-results && if exist allure-report rmdir /q /s allure-report && if exist cypress\\screenshots rmdir /q /s cypress\\screenshots && if exist cypress\\videos rmdir /q /s cypress\\videos",
     "report:allure": "allure generate allure-results && allure open allure-report",
