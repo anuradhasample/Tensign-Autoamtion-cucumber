@@ -3,7 +3,6 @@
         "usernameText":"input[id='txt_UserName']",
         "passwordText":"input[type='password']",
         "clickloginButton":"input[class='submit-button-standard requires-cookies']"
-
 }
 }
 
