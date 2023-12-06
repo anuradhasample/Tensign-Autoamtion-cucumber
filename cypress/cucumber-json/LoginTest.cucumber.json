@@ -1,0 +1,79 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Log in Feature",
+    "line": 1,
+    "id": "log-in-feature",
+    "tags": [],
+    "uri": "LoginTest.feature",
+    "elements": [
+      {
+        "id": "log-in-feature;login-functionality",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Login Functionality",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "Navigate to the Website",
+            "result": {
+              "status": "passed",
+              "duration": 3100000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "email",
+                      "validpassword"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "justina_buyer",
+                      "test123"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 5,
+            "name": "Enter valid credentials",
+            "result": {
+              "status": "passed",
+              "duration": 509000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "User click on login button",
+            "result": {
+              "status": "passed",
+              "duration": 8873000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Validate the title after login",
+            "result": {
+              "status": "passed",
+              "duration": 2013000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

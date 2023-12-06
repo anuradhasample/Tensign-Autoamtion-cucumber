@@ -1,0 +1,35 @@
+{
+  "name": "tensign-autoamtion-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "dependencies": {
+    "cypress": "^13.6.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-iframe": "^1.0.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/e2e/cucumber/Tests",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "scripts": {
+    "beforetest": "npm run allure:clear",
+    "allure:clear": "if exist allure-results rmdir /q /s allure-results && if exist allure-report rmdir /q /s allure-report && if exist cypress\\screenshots rmdir /q /s cypress\\screenshots && if exist cypress\\videos rmdir /q /s cypress\\videos",
+    "report:allure": "allure generate allure-results && allure open allure-report",
+    "cy:smoke": "cypress run --spec cypress/e2e/cucumber/Tests/**.feature --headed --env allure=true",
+    "smoke:test": "npm run beforetest && (npm run cy:smoke && npm run report:allure) || npm run report:allure"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@mmisty/cypress-allure-adapter": "^0.16.1",
+    "cypress-file-upload": "^5.0.8",
+    "multiple-cucumber-html-reporter": "^3.5.0"
+  }
+}
