@@ -23,7 +23,7 @@
     "allure:clear": "if exist allure-results rmdir /q /s allure-results && if exist allure-report rmdir /q /s allure-report && if exist cypress\\screenshots rmdir /q /s cypress\\screenshots && if exist cypress\\videos rmdir /q /s cypress\\videos",
     "report:allure": "allure generate allure-results && allure open allure-report",
     "cy:smoke": "cypress run --spec cypress/e2e/cucumber/Tests/**.feature --headed --env allure=true",
-    "smoke:test": "npm run beforetest && (npm run cy:smoke && npm run report:allure) || npm run report:allure"
+    "smoke:test": "(npm run cy:smoke && npm run report:allure) || npm run report:allure"
   },
   "author": "",
   "license": "ISC",
