@@ -13,7 +13,7 @@ jobs:
       - name: Cypress smoke
         uses: cypress-io/github-action@v6
         with:
-          command: npm run cucumber:test
+          command: npm run cucumber-test
           build: npx cypress info
           browser: chrome
         
