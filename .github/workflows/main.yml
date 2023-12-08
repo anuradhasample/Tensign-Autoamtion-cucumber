@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Java
-        uses: actions/setup-java@v4
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress smoke
@@ -18,7 +16,6 @@ jobs:
           command: npm run smoke:allure
           build: npx cypress info
           browser: chrome
-          java-version: "11"
            
       - name: Get Allure history
         uses: actions/checkout@v3
