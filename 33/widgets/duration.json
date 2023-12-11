@@ -1,0 +1,1 @@
+[{"uid":"edeb8fac6b91b83","name":"Login Functionality","time":{"start":1702289330339,"stop":1702289339648,"duration":9309},"status":"passed","severity":"normal"},{"uid":"a816f5ba885754c2","name":"validate the plan tab","time":{"start":1702289346386,"stop":1702289367667,"duration":21281},"status":"failed","severity":"normal"}]
