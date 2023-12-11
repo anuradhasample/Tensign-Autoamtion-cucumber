@@ -32,7 +32,7 @@ jobs:
       - name: Copy test execution videos
         run: |
           mkdir public
-          cp -r cypress/videos public/videos
+          cp -r cypress/videos
 
       - name: Deploy report to Github Pages
         if: always()
