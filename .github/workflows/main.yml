@@ -23,26 +23,31 @@ jobs:
       - name: Run smoke suite
         uses: cypress-io/github-action@v6
         with:
-          command: npm run smoke:allure
+          command: npm run cypress:execution-allure
           build: npx cypress info
           browser: chrome
           config-file: ./cypress.config.js
           continue-on-error: true
            
-      - name: Copy test execution videos
-        run: |
-          mkdir public
-          cp -r cypress/videos
-
+      
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: allure
+          path: allure
+          
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          gh_pages: allure
       - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_branch: public
-            user_name: 'github-actions[bot]'
-            user_email: 'github-actions[bot]@users.noreply.github.com'
-              
-
-    
-        
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: allure
+          publish_dir: allure-history
