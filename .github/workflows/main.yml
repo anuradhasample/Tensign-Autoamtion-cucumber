@@ -26,9 +26,7 @@ jobs:
           command: npm run cypress:execution-allure
           build: npx cypress info
           browser: chrome
-          config-file: ./cypress.config.js
-          continue-on-error: true
-           
+          config-file: ./cypress.config.js           
       
       - name: Get Allure history
         uses: actions/checkout@v2
