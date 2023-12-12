@@ -25,7 +25,7 @@
     "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true",
     "beforetest": "npm run allure:clear",
     "report:allure": "allure generate allure-results && allure open allure-report",
-    "cy:smoke": "cypress run --spec cypress/e2e/module1/**.js --headed --env allure=true",
+    "cy:smoke": "cypress run --spec cypress/e2e/cucumber/Tests/**.feature --headed --env allure=true",
     "smoke:test": "npm run beforetest && (npm run cy:smoke && npm run report:allure) || npm run report:allure"
   },
   "author": "",
