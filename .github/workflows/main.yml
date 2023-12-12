@@ -22,31 +22,15 @@ jobs:
       - name: Run smoke suite
         uses: cypress-io/github-action@v6
         with:
-          command: npm run cypress:execution-allure
+          command: npm run smoke:test
           build: npx cypress info
           browser: chrome
-          config-file: ./cypress.config.js           
-      
-      - name: Get Allure history
-        uses: actions/checkout@v2
-        if: always()
-        continue-on-error: true
-        with:
-          ref: allure
-          path: allure
-          
-      - name: Generate Allure Report
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        with:
-          allure_results: allure-results
-          allure_report: allure-report
-          gh_pages: allure
+          config-file: ./cypress.config.js
           
       - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: allure
-          publish_dir: allure-history
+          publish_branch: sample-Bdd
+          publish_dir: allure-report
