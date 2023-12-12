@@ -1,3 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Dec 12 06:53:17 GMT 2023","Tue Dec 12 06:53:48 GMT 2023","31229","Smoke Suite","","","","","validate the plan tab",""
-"passed","Tue Dec 12 06:52:58 GMT 2023","Tue Dec 12 06:53:10 GMT 2023","12318","Log in Feature","","","","","Login Functionality",""
