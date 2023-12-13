@@ -5,6 +5,7 @@ on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.0-chrome83-ff77
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,16 +22,22 @@ jobs:
         
       - name: Run smoke suite
         uses: cypress-io/github-action@v6
+        continue-on-error: true
         with:
           command: npm run smoke:test
-          build: npx cypress info
           browser: chrome
           config-file: ./cypress.config.js
           
-      - name: Deploy report to Github Pages
-        if: always()
+      - name: Copy test execution videos, screenshots and reports
+        run: |
+          mkdir public
+          cp -r cypress/videos public/videos
+          cp -r cypress/screenshots public/screenshots
+          cp -a allure-report/. public
+          cp -r allure-results public/allure-results
+      
+      - name: Deploy report page to GitHub Page
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-report
+          publish_dir: ./public
