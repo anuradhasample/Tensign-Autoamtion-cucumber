@@ -1,3 +1,3 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Tue Dec 12 10:25:22 UTC 2023","Tue Dec 12 10:25:45 UTC 2023","22950","Smoke Suite","","","","","validate the plan tab",""
-"passed","Tue Dec 12 10:25:04 UTC 2023","Tue Dec 12 10:25:15 UTC 2023","11672","Log in Feature","","","","","Login Functionality",""
+"passed","Wed Dec 13 10:20:20 UTC 2023","Wed Dec 13 10:20:31 UTC 2023","10090","Log in Feature","","","","","Login Functionality",""
+"failed","Wed Dec 13 10:20:38 UTC 2023","Wed Dec 13 10:21:00 UTC 2023","22428","Smoke Suite","","","","","validate the plan tab",""
