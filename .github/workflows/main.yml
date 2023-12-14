@@ -15,7 +15,7 @@ jobs:
           java-version: "11"
           distribution: "adopt"
       
-      # Install NPM dependencies
+      # Install NPM dependencie
       - name: Set up npm package
         run: npm install
         
