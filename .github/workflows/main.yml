@@ -35,7 +35,7 @@ jobs:
           cp -a allure-report/. public
           cp -r allure-results public/allure-results
       
-      - name: Deploy report page to GitHub Page
+      - name: Deploy page to GitHub Page
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
