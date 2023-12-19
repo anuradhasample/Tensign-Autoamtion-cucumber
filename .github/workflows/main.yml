@@ -27,7 +27,7 @@ jobs:
           browser: chrome
           config-file: ./cypress.config.js
           
-      - name: Copy test execution videos, screenshots and reports
+      - name: Copy test execution videos, screenshots and report
         run: |
           mkdir public
           cp -r cypress/videos public/videos
